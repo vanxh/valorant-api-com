@@ -161,6 +161,16 @@ class Client {
     }
 
     /**
+    * getMissions(uuid)
+    * returns all valorant mission data or a mission data by uuid
+    * @param {string} [uuid]
+    * returns {Promise <object>}
+    */
+     async getMissions(uuid) {
+        return (uuid ? await this.request(`missions/${uuid}`) : await this.request(`missions`));
+    }
+
+    /**
     * getMaps(uuid)
     * returns all valorant mission data or a mission data by uuid
     * @param {string} [uuid]
