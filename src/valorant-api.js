@@ -171,13 +171,13 @@ class Client {
     }
 
     /**
-    * getMaps(uuid)
-    * returns all valorant mission data or a mission data by uuid
+    * getObjectives(uuid)
+    * returns all valorant objective data or a objective data by uuid
     * @param {string} [uuid]
     * returns {Promise <object>}
     */
-     async getMissions(uuid) {
-        return (uuid ? await this.request(`missions/${uuid}`) : await this.request(`missions`));
+     async getObjectives(uuid) {
+        return (uuid ? await this.request(`objectives/${uuid}`) : await this.request(`objectives`));
     }
 
     /**
@@ -218,6 +218,36 @@ class Client {
     */
     async getSprays(uuid) {
         return (uuid ? await this.request(`sprays/${uuid}`) : await this.request(`sprays`));
+    }
+
+    /**
+    * getSkins(uuid)
+    * returns all valorant skin data or a skin data by uuid
+    * @param {string} [uuid]
+    * returns {Promise <object>}
+    */
+     async getSkins(uuid) {
+        return (uuid ? await this.request(`weapons/skins/${uuid}`) : await this.request(`weapons/skins`));
+    }
+
+    /**
+    * getSkinLevels(uuid)
+    * returns all valorant skin level data or a skin level data by uuid
+    * @param {string} [uuid]
+    * returns {Promise <object>}
+    */
+     async getSkinLevels(uuid) {
+        return (uuid ? await this.request(`weapons/skinlevels/${uuid}`) : await this.request(`weapons/skinlevels`));
+    }
+
+    /**
+    * getSkinChromas(uuid)
+    * returns all valorant skin chroma data or a skin chroma data by uuid
+    * @param {string} [uuid]
+    * returns {Promise <object>}
+    */
+     async getSkinChromas(uuid) {
+        return (uuid ? await this.request(`weapons/skinchromas/${uuid}`) : await this.request(`weapons/skinchromas`));
     }
 
     /**
