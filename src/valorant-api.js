@@ -44,10 +44,11 @@ class Client {
     * getAgents(uuid)
     * returns all agents data or if you give a uuid data of that agent
     * @param {string} [uuid]
+    * @param {boolean} [isPlayableCharacter]
     * returns {Promise <object>}
     */
-    async getAgents(uuid) {
-        return (uuid ? await this.request(`agents/${uuid}`) : await this.request(`agents`));
+    async getAgents(uuid, isPlayableCharacter) {
+        return (uuid ? await this.request(`agents/${uuid}`) : await this.request(`agents?isPlayableCharacter=${isPlayableCharacter}`));
     }
 
     /**
